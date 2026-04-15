@@ -6,4 +6,5 @@ You can check it out from here - (https://github.com/wasvaibhav/hospital-managem
  node backend/server.js
 
 npm init -y
+
 npm install express cors
