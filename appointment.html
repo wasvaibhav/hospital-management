@@ -159,7 +159,7 @@
                     </div>
 
                     <!--=== APPOINTMENT FORM ===-->
-                    <form onsubmit="showMsg(0);return false;" method="post" class="sky-form sky-changes-3">
+                    <form onsubmit="bookAppointment(); return false;" method="post" class="sky-form sky-changes-3">
                         <fieldset>
                             <div class="row">
                                 <section class="col col-6">
@@ -385,6 +385,46 @@
             }
         }
     </script>
+    <!-- your whole HTML code -->
+
+    <script>
+        async function bookAppointment() {
+            const data = {
+                name: document.getElementById("name").value,
+                subject: document.querySelector('input[name="subject"]').value,
+                number: document.getElementById("number").value,
+                department: document.querySelector('select[name="Department"]').value,
+                date: document.querySelector('input[type="date"]').value,
+                time: document.querySelector('select[name="Time"]').value
+            };
+
+            console.log(data); // debug
+
+            try {
+                const res = await fetch("http://localhost:3000/api/book", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await res.json();
+
+                if (result.error) {
+                    alert(result.error);
+                } else {
+                    alert(result.message);
+                    showMsg(0); // success box
+                }
+
+            } catch (err) {
+                console.error(err);
+                alert("Backend not connected ❌");
+            }
+        }
+    </script>
+
 
 </body>
 

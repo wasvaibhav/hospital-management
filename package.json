@@ -1,0 +1,25 @@
+{
+  "name": "hospital-management",
+  "version": "1.0.0",
+  "description": "A decent Hospital Management System which is created using Html, css and Bootstrap.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wasvaibhav/hospital-management.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wasvaibhav/hospital-management/issues"
+  },
+  "homepage": "https://github.com/wasvaibhav/hospital-management#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "nodemailer": "^8.0.5"
+  }
+}
